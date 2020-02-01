@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Add Student</title>
+</head>
+<body>
+    <h1>Add student</h1>
+    <div>
+        <form action="#" th:action="@{/add}" th:object="${student}" method="post">
+
+            <label for="name">Name</label>
+            <input type="text" id="name" th:field="*{name}" placeholder="Name">
+            <span th:if="${#fields.hasErrors('name')}" th:errors="*{name}"></span>
+            <br>
+
+            <label for="email">Email</label>
+            <input type="text" id="email" th:field="*{email}" placeholder="Email">
+
+            <br>
+
+            <label for="telegram">Telegram</label>
+            <input type="text" id="telegram" th:field="*{telegram}" placeholder="Telegram">
+            <span th:if="${#fields.hasErrors('telegram')}" th:errors="*{telegram}"></span>
+            <br>
+
+            <label for="level">Level</label>
+            <input type="text" id="level" th:field="*{level}" placeholder="Level">
+
+            <br>
+
+            <input type="submit" value="Save student">
+        </form>
+    </div>
+</body>
+</html>
